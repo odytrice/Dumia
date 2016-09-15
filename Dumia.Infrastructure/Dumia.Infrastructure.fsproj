@@ -5,14 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>e2502b4d-5510-48be-9a34-9b65a51b5044</ProjectGuid>
+    <ProjectGuid>e803fe17-3585-42c0-b3be-8d4f650b189f</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Dumia.Data</RootNamespace>
-    <AssemblyName>Dumia.Data</AssemblyName>
+    <RootNamespace>Dumia.Infrastructure</RootNamespace>
+    <AssemblyName>Dumia.Infrastructure</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Name>Dumia.Data</Name>
+    <Name>Dumia.Infrastructure</Name>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -23,7 +23,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Debug\Dumia.Data.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Dumia.Infrastructure.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,7 +32,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Release\Dumia.Data.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Dumia.Infrastructure.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -47,6 +47,13 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Library1.fs" />
     <None Include="Script.fsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dumia.Domain\Dumia.Domain.fsproj">
+      <Name>Dumia.Domain</Name>
+      <Project>{100e3a25-d27b-4380-bfc4-149c2d31227e}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

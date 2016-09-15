@@ -5,11 +5,11 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Dumia.Http", "Dumia.Http\Dumia.Http.fsproj", "{FFE56477-0D53-45F3-904E-E4797346FE96}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Dumia.Data", "Dumia.Data\Dumia.Data.fsproj", "{E2502B4D-5510-48BE-9A34-9B65A51B5044}"
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Dumia.Core", "Dumia.Core\Dumia.Core.fsproj", "{2B1BD6D5-4328-4A9F-AB2B-79AEB6047F71}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dumia.Web", "Dumia.Web\Dumia.Web.csproj", "{0D716FE6-1BA1-4960-B198-B3A5A80D2397}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Dumia.Domain", "Dumia.Domain\Dumia.Domain.fsproj", "{100E3A25-D27B-4380-BFC4-149C2D31227E}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Dumia.Infrastructure", "Dumia.Infrastructure\Dumia.Infrastructure.fsproj", "{E803FE17-3585-42C0-B3BE-8D4F650B189F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +21,18 @@ Global
 		{FFE56477-0D53-45F3-904E-E4797346FE96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFE56477-0D53-45F3-904E-E4797346FE96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFE56477-0D53-45F3-904E-E4797346FE96}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E2502B4D-5510-48BE-9A34-9B65A51B5044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E2502B4D-5510-48BE-9A34-9B65A51B5044}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E2502B4D-5510-48BE-9A34-9B65A51B5044}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E2502B4D-5510-48BE-9A34-9B65A51B5044}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2B1BD6D5-4328-4A9F-AB2B-79AEB6047F71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B1BD6D5-4328-4A9F-AB2B-79AEB6047F71}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B1BD6D5-4328-4A9F-AB2B-79AEB6047F71}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B1BD6D5-4328-4A9F-AB2B-79AEB6047F71}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0D716FE6-1BA1-4960-B198-B3A5A80D2397}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0D716FE6-1BA1-4960-B198-B3A5A80D2397}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D716FE6-1BA1-4960-B198-B3A5A80D2397}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D716FE6-1BA1-4960-B198-B3A5A80D2397}.Release|Any CPU.Build.0 = Release|Any CPU
+		{100E3A25-D27B-4380-BFC4-149C2D31227E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{100E3A25-D27B-4380-BFC4-149C2D31227E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{100E3A25-D27B-4380-BFC4-149C2D31227E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{100E3A25-D27B-4380-BFC4-149C2D31227E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E803FE17-3585-42C0-B3BE-8D4F650B189F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E803FE17-3585-42C0-B3BE-8D4F650B189F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E803FE17-3585-42C0-B3BE-8D4F650B189F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E803FE17-3585-42C0-B3BE-8D4F650B189F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

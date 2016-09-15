@@ -5,14 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>2b1bd6d5-4328-4a9f-ab2b-79aeb6047f71</ProjectGuid>
+    <ProjectGuid>100e3a25-d27b-4380-bfc4-149c2d31227e</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Dumia.Core</RootNamespace>
-    <AssemblyName>Dumia.Core</AssemblyName>
+    <RootNamespace>Dumia.Domain</RootNamespace>
+    <AssemblyName>Dumia.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Name>Dumia.Core</Name>
+    <Name>Dumia.Domain</Name>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -23,7 +23,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Debug\Dumia.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Dumia.Domain.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,7 +32,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Release\Dumia.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Dumia.Domain.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

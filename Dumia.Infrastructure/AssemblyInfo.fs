@@ -1,4 +1,4 @@
-﻿namespace Dumia.Core.AssemblyInfo
+﻿namespace Dumia.Infrastructure.AssemblyInfo
 
 open System.Reflection
 open System.Runtime.CompilerServices
@@ -7,11 +7,11 @@ open System.Runtime.InteropServices
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[<assembly: AssemblyTitle("Dumia.Core")>]
+[<assembly: AssemblyTitle("Dumia.Infrastructure")>]
 [<assembly: AssemblyDescription("")>]
 [<assembly: AssemblyConfiguration("")>]
 [<assembly: AssemblyCompany("")>]
-[<assembly: AssemblyProduct("Dumia.Core")>]
+[<assembly: AssemblyProduct("Dumia.Infrastructure")>]
 [<assembly: AssemblyCopyright("Copyright ©  2016")>]
 [<assembly: AssemblyTrademark("")>]
 [<assembly: AssemblyCulture("")>]
@@ -22,7 +22,7 @@ open System.Runtime.InteropServices
 [<assembly: ComVisible(false)>]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[<assembly: Guid("2b1bd6d5-4328-4a9f-ab2b-79aeb6047f71")>]
+[<assembly: Guid("e803fe17-3585-42c0-b3be-8d4f650b189f")>]
 
 // Version information for an assembly consists of the following four values:
 // 

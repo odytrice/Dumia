@@ -11,7 +11,7 @@ open System.Web.Http.Owin
 [<Sealed>]
 type Startup() = 
     
-    let RegisterWebApi (app:IAppBuilder) = 
+    let registerWebApi (app:IAppBuilder) = 
         let config = new HttpConfiguration()
         // Configure routing
         config.MapHttpAttributeRoutes()
@@ -20,19 +20,19 @@ type Startup() =
         app.UseWebApi(config)
     
     
-    let RegisterCors (app:IAppBuilder) = 
+    let registerCors (app:IAppBuilder) = 
         let options = Cors.CorsOptions()
         app.UseCors(options)
 
-    let WelcomePage (app:IAppBuilder) = 
+    let welcomePage (app:IAppBuilder) = 
         app.UseWelcomePage("/")
 
-    let ErrorPage (app:IAppBuilder) =
+    let errorPage (app:IAppBuilder) =
         app.UseErrorPage()
     
     member this.Configuration (app : IAppBuilder) = 
-        RegisterWebApi(app)
-        |> RegisterCors
-        |> WelcomePage
-        |> ErrorPage
+        registerWebApi(app)
+        |> registerCors
+        |> welcomePage
+        |> errorPage
         |> ignore

@@ -175,14 +175,14 @@
     <Reference Include="System.Xml.Linq.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dumia.Core\Dumia.Core.fsproj">
-      <Name>Dumia.Core</Name>
-      <Project>{2b1bd6d5-4328-4a9f-ab2b-79aeb6047f71}</Project>
+    <ProjectReference Include="..\Dumia.Domain\Dumia.Domain.fsproj">
+      <Name>Dumia.Domain</Name>
+      <Project>{100e3a25-d27b-4380-bfc4-149c2d31227e}</Project>
       <Private>True</Private>
     </ProjectReference>
-    <ProjectReference Include="..\Dumia.Data\Dumia.Data.fsproj">
-      <Name>Dumia.Data</Name>
-      <Project>{e2502b4d-5510-48be-9a34-9b65a51b5044}</Project>
+    <ProjectReference Include="..\Dumia.Infrastructure\Dumia.Infrastructure.fsproj">
+      <Name>Dumia.Infrastructure</Name>
+      <Project>{e803fe17-3585-42c0-b3be-8d4f650b189f}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
