@@ -7,6 +7,8 @@ open System.Net.Http
 open System.Web
 open System.Web.Http
 open System.Web.Http.Owin
+open System.Web.Http.Dispatcher
+open Domain.Http.Infrastructure
 
 [<Sealed>]
 type Startup() = 
@@ -17,6 +19,11 @@ type Startup() =
         config.MapHttpAttributeRoutes()
         // Remove XML Formatter
         config.Formatters.Remove(config.Formatters.XmlFormatter) |> ignore
+
+        let serializer = config.Formatters.JsonFormatter.SerializerSettings
+
+        config.Services.Replace(typeof<IHttpControllerActivator>, CompositionRoot())
+
         app.UseWebApi(config)
     
     

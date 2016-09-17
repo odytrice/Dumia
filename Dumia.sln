@@ -11,6 +11,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Dumia.Domain", "Dumia.Domai
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Dumia.Infrastructure", "Dumia.Infrastructure\Dumia.Infrastructure.fsproj", "{E803FE17-3585-42C0-B3BE-8D4F650B189F}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Dumia.Test", "Dumia.Test\Dumia.Test.fsproj", "{11BF7638-18FB-49F0-8487-89150567B806}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{E803FE17-3585-42C0-B3BE-8D4F650B189F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E803FE17-3585-42C0-B3BE-8D4F650B189F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E803FE17-3585-42C0-B3BE-8D4F650B189F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11BF7638-18FB-49F0-8487-89150567B806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11BF7638-18FB-49F0-8487-89150567B806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11BF7638-18FB-49F0-8487-89150567B806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11BF7638-18FB-49F0-8487-89150567B806}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
