@@ -57,6 +57,7 @@
     <Compile Include="SqlRepository.fs" />
     <Content Include="packages.config" />
     <Content Include="App.config" />
+    <None Include="Database.sql" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core">

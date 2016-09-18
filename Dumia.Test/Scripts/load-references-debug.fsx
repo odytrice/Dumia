@@ -7,6 +7,6 @@
 #r "System.dll"
 #r "System.Numerics.dll"
 #r "../../Dumia.Domain/bin/Debug/Dumia.Domain.dll"
-#r "../../Dumia.Infrastructure/bin/Debug/Dumia.Infrastructure.dll"
 #r "../../Dumia.Http/bin/Dumia.Http.dll"
 #r "System.Data.Linq.dll"
+#r "../../Dumia.Infrastructure/bin/Debug/Dumia.Infrastructure.dll"
