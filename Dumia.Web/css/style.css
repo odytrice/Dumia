@@ -1,4 +1,7 @@
-﻿body {
+﻿@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+body {
+    font-family: Calibri,'Open Sans', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: 50px;
 }
 

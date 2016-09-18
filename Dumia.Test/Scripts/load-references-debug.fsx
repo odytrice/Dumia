@@ -10,3 +10,4 @@
 #r "../../Dumia.Http/bin/Dumia.Http.dll"
 #r "System.Data.Linq.dll"
 #r "../../Dumia.Infrastructure/bin/Debug/Dumia.Infrastructure.dll"
+#r "../../packages/Newtonsoft.Json.9.0.1/lib/net45/Newtonsoft.Json.dll"

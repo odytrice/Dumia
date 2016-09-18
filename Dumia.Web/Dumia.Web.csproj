@@ -66,6 +66,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\style.css" />
     <Content Include="libs\angular-animate\angular-animate.js" />
     <Content Include="libs\angular-animate\angular-animate.min.js" />
     <Content Include="libs\angular-animate\index.js" />
@@ -784,7 +785,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="css\" />
     <Folder Include="Properties\" />
     <Folder Include="templates\" />
   </ItemGroup>

@@ -2,6 +2,7 @@ namespace Dumia.Http
 
 open Owin
 open Microsoft.Owin
+open Newtonsoft.Json
 open System
 open System.Net.Http
 open System.Web
@@ -9,37 +10,34 @@ open System.Web.Http
 open System.Web.Http.Owin
 open System.Web.Http.Dispatcher
 open Domain.Http.Infrastructure
+open System.Net.Http.Formatting
 
 [<Sealed>]
 type Startup() = 
-    
-    let registerWebApi (app:IAppBuilder) = 
+
+    let registerWebApi (app : IAppBuilder) = 
+
         let config = new HttpConfiguration()
         // Configure routing
         config.MapHttpAttributeRoutes()
-        // Remove XML Formatter
+        
+        // Remove XML Formatter and Fix Json Camel Case
         config.Formatters.Remove(config.Formatters.XmlFormatter) |> ignore
-
-        let serializer = config.Formatters.JsonFormatter.SerializerSettings
+        config.Formatters.JsonFormatter.SerializerSettings.ContractResolver <- Serialization.CamelCasePropertyNamesContractResolver()
 
         config.Services.Replace(typeof<IHttpControllerActivator>, CompositionRoot())
-
         app.UseWebApi(config)
-    
-    
-    let registerCors (app:IAppBuilder) = 
-        let options = Cors.CorsOptions()
-        app.UseCors(options)
 
-    let welcomePage (app:IAppBuilder) = 
-        app.UseWelcomePage("/")
-
-    let errorPage (app:IAppBuilder) =
-        app.UseErrorPage()
     
-    member this.Configuration (app : IAppBuilder) = 
-        registerWebApi(app)
+    
+    let registerCors (app : IAppBuilder) = 
+        app.UseCors(Cors.CorsOptions.AllowAll)
+    
+    let customPages (app : IAppBuilder) = 
+        app.UseWelcomePage("/").UseErrorPage()
+
+    member this.Configuration(app : IAppBuilder) = 
+        registerWebApi (app)
         |> registerCors
-        |> welcomePage
-        |> errorPage
+        |> customPages
         |> ignore
