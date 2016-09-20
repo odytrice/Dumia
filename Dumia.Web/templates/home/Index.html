@@ -1,0 +1,74 @@
+﻿<div class="row">
+    <div class="col-lg-9 col-md-8">
+        <div class="heading">
+            <div class="row">
+                <div class="col-xs-6">
+                    <p class="title">Products</p>
+                </div>
+                <div class="col-xs-6 action-bar">
+
+                </div>
+            </div>
+            <hr />
+        </div>
+
+        <div class="row">
+            <!--@foreach (var product in Model.Products)
+            {
+            <div class="col-xs-6 col-sm-4 col-md-3">
+                <div class="pane" data-navigate="#/form">
+                    @if (string.IsNullOrEmpty(product.ImageUrl))
+                    {
+                    <i class="fa fa-square fa-4x"></i>
+                    }
+                    else
+                    {
+                    <img src="@product.ImageUrl" class="img-responsive" height="100" />
+                    }
+                    <div class="text-center">
+                        <p style="margin-top:10px;font-size:23px">@product.Name</p>
+                        <p style="font-weight:bold">&#8358;@product.Price.ToString("N2")</p>
+
+                        <form action="@Url.Action(" add","cart",new { id=product.ProductID })" method="post">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-cart-plus"></i>Add to Cart</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            }-->
+        </div>
+        }
+        else
+        {
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="empty" style="margin:50px">
+                    There are no products Available
+                </p>
+            </div>
+        </div>
+        }
+    </div>
+    <div class="col-lg-3 col-md-4">
+
+        <div class="heading">
+            <div class="row">
+                <div class="col-xs-6">
+                    <p class="title"><i class="fa fa-shopping-cart"></i>Cart</p>
+                </div>
+                <div class="col-xs-6 action-bar">
+
+                </div>
+            </div>
+            <hr />
+        </div>
+
+        @Html.Partial("Cart", Model.Cart)
+
+        <hr />
+        <div class="text-right">
+            <a href="@Url.Action(" checkout","cart")" class="btn btn-success"><i class="fa fa-shopping-bag"></i>Checkout</a>
+        </div>
+    </div>
+</div>
