@@ -12,19 +12,11 @@
             <hr />
         </div>
 
-        <div class="row">
-            <!--@foreach (var product in Model.Products)
-            {
-            <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="row" ng-show="model.Products">
+            <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="product in model.Products">
                 <div class="pane" data-navigate="#/form">
-                    @if (string.IsNullOrEmpty(product.ImageUrl))
-                    {
-                    <i class="fa fa-square fa-4x"></i>
-                    }
-                    else
-                    {
-                    <img src="@product.ImageUrl" class="img-responsive" height="100" />
-                    }
+                    <i ng-hide="product.ImageUrl" class="fa fa-square fa-4x"></i>
+                    <img ng-src="{{product.ImageUrl}}" ng-show="product.ImageUrl" class="img-responsive" height="100" />
                     <div class="text-center">
                         <p style="margin-top:10px;font-size:23px">@product.Name</p>
                         <p style="font-weight:bold">&#8358;@product.Price.ToString("N2")</p>
@@ -36,22 +28,16 @@
 
                 </div>
             </div>
-            }-->
         </div>
-        }
-        else
-        {
-        <div class="row">
+        <div class="row" ng-hide="model.Products">
             <div class="col-lg-12">
                 <p class="empty" style="margin:50px">
                     There are no products Available
                 </p>
             </div>
         </div>
-        }
     </div>
     <div class="col-lg-3 col-md-4">
-
         <div class="heading">
             <div class="row">
                 <div class="col-xs-6">
@@ -64,7 +50,54 @@
             <hr />
         </div>
 
-        @Html.Partial("Cart", Model.Cart)
+        @if (Model != null && Model.Items.Any())
+        {
+        <div class="row">
+            <div class="col-xs-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Product</th>
+                            <th class="text-right">Price</th>
+                            <th class="text-right">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Items)
+                        {
+                        <tr>
+                            <td>@item.Quantity</td>
+                            <td>@item.ProductName</td>
+                            <td class="text-right">&#8358;@item.Price</td>
+                            <td class="text-right">&#8358;@((item.Price * item.Quantity).ToString("N2"))</td>
+                        </tr>
+                        }
+                        <tr>
+                            <td colspan="3" class="text-right">
+                                <b>Total</b>
+                            </td>
+                            <td class="text-right">
+                                <b>&#8358;@Model.Total.ToString("N2")</b>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        }
+        else
+        {
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="empty" style="margin:50px">
+                    <i class="fa fa-shopping-cart fa-5x" style="color:grey"></i>
+                    <p style="margin-top:20px">Cart is Empty</p>
+                </div>
+            </div>
+        </div>
+        }
 
         <hr />
         <div class="text-right">

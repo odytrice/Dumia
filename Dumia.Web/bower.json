@@ -9,7 +9,8 @@
     "bootstrap": "^3.3.7",
     "angular-bootstrap": "^2.0.0",
     "flat-ui": "^2.3.0",
-    "angular-ui-router": "^0.3.1"
+    "angular-ui-router": "^0.3.1",
+    "font-awesome": "^4.6.3"
   },
   "resolutions": {
     "angular": "^1.5.0"

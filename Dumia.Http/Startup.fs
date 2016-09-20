@@ -29,7 +29,6 @@ type Startup() =
         app.UseWebApi(config)
 
     
-    
     let registerCors (app : IAppBuilder) = 
         app.UseCors(Cors.CorsOptions.AllowAll)
     

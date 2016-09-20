@@ -90,6 +90,9 @@
     <Content Include="libs\angular-local-storage\dist\angular-local-storage.js" />
     <Content Include="libs\angular-local-storage\dist\angular-local-storage.min.js" />
     <Content Include="libs\angular-local-storage\index.js" />
+    <Content Include="libs\angular-route\angular-route.js" />
+    <Content Include="libs\angular-route\angular-route.min.js" />
+    <Content Include="libs\angular-route\index.js" />
     <Content Include="libs\angular-ui-router\release\angular-ui-router.js" />
     <Content Include="libs\angular-ui-router\release\angular-ui-router.min.js" />
     <Content Include="libs\angular-ui-router\src\common.js" />
@@ -277,6 +280,10 @@
     <Content Include="libs\flat-ui\index.html" />
     <Content Include="libs\flat-ui\index.js" />
     <Content Include="libs\flat-ui\js\radiocheck.js" />
+    <Content Include="libs\font-awesome\css\font-awesome.css" />
+    <Content Include="libs\font-awesome\css\font-awesome.min.css" />
+    <Content Include="libs\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="libs\font-awesome\HELP-US-OUT.txt" />
     <Content Include="libs\jquery\AUTHORS.txt" />
     <Content Include="libs\jquery\dist\jquery.js" />
     <Content Include="libs\jquery\dist\jquery.min.js" />
@@ -785,12 +792,56 @@
     <Content Include="libs\videojs\src\css\font\vjs.ttf" />
     <Content Include="libs\videojs\src\css\font\vjs.woff" />
     <Content Include="libs\videojs\src\css\video-js.less" />
+    <Content Include="libs\angular-route\.bower.json" />
+    <Content Include="libs\angular-route\angular-route.min.js.map" />
+    <Content Include="libs\angular-route\bower.json" />
+    <Content Include="libs\angular-route\LICENSE.md" />
+    <Content Include="libs\angular-route\package.json" />
+    <Content Include="libs\angular-route\README.md" />
     <Content Include="libs\angular-ui-router\.bower.json" />
     <Content Include="libs\angular-ui-router\bower.json" />
     <Content Include="libs\angular-ui-router\CHANGELOG.md" />
     <Content Include="libs\angular-ui-router\CONTRIBUTING.md" />
     <Content Include="libs\angular-ui-router\LICENSE" />
     <Content Include="libs\angular-ui-router\README.md" />
+    <Content Include="libs\font-awesome\.bower.json" />
+    <Content Include="libs\font-awesome\.gitignore" />
+    <Content Include="libs\font-awesome\.npmignore" />
+    <Content Include="libs\font-awesome\bower.json" />
+    <Content Include="libs\font-awesome\css\font-awesome.css.map" />
+    <Content Include="libs\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="libs\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="libs\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="libs\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="libs\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="libs\font-awesome\less\animated.less" />
+    <Content Include="libs\font-awesome\less\bordered-pulled.less" />
+    <Content Include="libs\font-awesome\less\core.less" />
+    <Content Include="libs\font-awesome\less\fixed-width.less" />
+    <Content Include="libs\font-awesome\less\font-awesome.less" />
+    <Content Include="libs\font-awesome\less\icons.less" />
+    <Content Include="libs\font-awesome\less\larger.less" />
+    <Content Include="libs\font-awesome\less\list.less" />
+    <Content Include="libs\font-awesome\less\mixins.less" />
+    <Content Include="libs\font-awesome\less\path.less" />
+    <Content Include="libs\font-awesome\less\rotated-flipped.less" />
+    <Content Include="libs\font-awesome\less\screen-reader.less" />
+    <Content Include="libs\font-awesome\less\stacked.less" />
+    <Content Include="libs\font-awesome\less\variables.less" />
+    <Content Include="libs\font-awesome\scss\font-awesome.scss" />
+    <Content Include="libs\font-awesome\scss\_animated.scss" />
+    <Content Include="libs\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="libs\font-awesome\scss\_core.scss" />
+    <Content Include="libs\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="libs\font-awesome\scss\_icons.scss" />
+    <Content Include="libs\font-awesome\scss\_larger.scss" />
+    <Content Include="libs\font-awesome\scss\_list.scss" />
+    <Content Include="libs\font-awesome\scss\_mixins.scss" />
+    <Content Include="libs\font-awesome\scss\_path.scss" />
+    <Content Include="libs\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="libs\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="libs\font-awesome\scss\_stacked.scss" />
+    <Content Include="libs\font-awesome\scss\_variables.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -808,7 +859,21 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.ts" />
+    <TypeScriptCompile Include="app\controllers.ts" />
+    <TypeScriptCompile Include="app\filters.ts" />
     <TypeScriptCompile Include="app\routes.ts" />
+    <TypeScriptCompile Include="app\services.ts" />
+    <TypeScriptCompile Include="typings\angularjs\angular-animate.d.ts" />
+    <TypeScriptCompile Include="typings\angularjs\angular-cookies.d.ts" />
+    <TypeScriptCompile Include="typings\angularjs\angular-local-storage.d.ts" />
+    <TypeScriptCompile Include="typings\angularjs\angular-sanitize.d.ts" />
+    <TypeScriptCompile Include="typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="typings\app\models.d.ts" />
+    <TypeScriptCompile Include="typings\bootstrap\bootstrap.d.ts" />
+    <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="typings\toastr\toastr.d.ts" />
+    <TypeScriptCompile Include="typings\ui-bootstrap\angular-ui-bootstrap.d.ts" />
+    <TypeScriptCompile Include="typings\ui-router\angular-ui-router.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

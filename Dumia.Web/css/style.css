@@ -1,11 +1,211 @@
-﻿@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+﻿html {
+    position: relative;
+    min-height: 100%;
+}
 
 body {
-    font-family: Calibri,'Open Sans', Tahoma, Geneva, Verdana, sans-serif;
-    padding-top: 50px;
+    /* Margin bottom by footer height */
+    margin-bottom: 50px;
+    font-family: Calibri,Verdana,Arial;
+    overflow-x:hidden;
 }
 
-.starter-template {
-    padding: 40px 15px;
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 50px;
+    background-color: #f5f5f5;
+    padding-top: 15px;
+}
+
+.navbar-brand {
+    padding: 15px 20px 15px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.fa {
+    margin-right: 5px;
+}
+
+.empty {
+    margin: 30px;
     text-align: center;
 }
+
+div[data-loader] {
+    margin: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 70px;
+    width: 70px;
+    display: none;
+    z-index: 1100;
+    text-align: center;
+}
+
+.heading {
+}
+
+    .heading hr {
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    .heading .title, .heading .action-bar {
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .heading .title {
+        white-space: nowrap;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        width: 100%;
+        display: block;
+        overflow: hidden;
+    }
+
+    .heading .action-bar {
+        margin-top: -2px;
+        text-align: right;
+    }
+
+.sub-heading {
+}
+
+    .sub-heading hr {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    .sub-heading .title, .sub-heading .action-bar {
+        font-size: 20px;
+        margin-top: 15px;
+        margin-bottom: 0px;
+    }
+
+    .sub-heading .title {
+        white-space: nowrap;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        width: 100%;
+        display: block;
+        overflow: hidden;
+    }
+
+    .sub-heading .action-bar {
+        margin-top: 13px;
+        text-align: right;
+    }
+
+.table.table-wide {
+    width: 100%;
+}
+
+/** Card Styles */
+.card {
+    border-radius: 4px;
+    border: 1px solid #dddddd;
+    padding: 10px 0px;
+    margin: 10px 0px;
+    cursor: default;
+
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+    .card:hover {
+        box-shadow: 0 1px 7px 0 rgba(0,0,0,.24);
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+
+    .card header {
+        padding: 5px;
+        vertical-align: middle;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .card button.close, .card a.close {
+        font-size: 14px;
+        padding-top: 3px;
+    }
+
+    .card table {
+        width: 100%;
+        margin: 5px;
+    }
+
+.pane {
+    border-radius: 5px;
+    padding: 70px 30px;
+    text-align: center;
+}
+
+    .pane h4 {
+        font-size: 15px;
+    }
+
+.pane-sm {
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+}
+
+.pane-hover:hover {
+    background-color: #ebf0f5;
+    cursor: pointer;
+}
+
+
+
+
+.sidebar header {
+    padding: 5px;
+    vertical-align: middle;
+    border-bottom: 1px solid #eee;
+}
+
+.notifications {
+    margin-top: 20px;
+}
+
+    .notifications .alert {
+        margin-bottom: 10px;
+    }
+
+/** Misc **/
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.tab-container {
+    padding: 15px 5px;
+}
+
+/** View Animation **/
+.view-frame.ng-enter {
+    -webkit-transition: linear all 0.3s;
+    -moz-transition: linear all 0.3s;
+    -o-transition: linear all 0.3s;
+    transition: linear all 0.3s;
+    opacity: 0;
+}
+
+    .view-frame.ng-enter.ng-enter-active {
+        opacity: 1;
+    }

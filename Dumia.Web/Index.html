@@ -15,6 +15,7 @@
     <!-- Bootstrap core CSS -->
     <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="libs/flat-ui/dist/css/flat-ui.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--
@@ -46,8 +47,8 @@
     </nav>
 
     <div class="container-fluid">
-
-        <div ng-view class="view-animate" />
+        <div data-loader><i class="fa fa-gear fa-spin fa-5x" style="opacity:0.7"></i>Working</div>
+        <div ui-view class="view-frame" />
 
     </div><!-- /.container -->
     <!-- Bootstrap core JavaScript
@@ -67,6 +68,9 @@
 
     <!-- Application Code -->
     <script src="app/app.js"></script>
+    <script src="app/services.js"></script>
+    <script src="app/filters.js"></script>
     <script src="app/routes.js"></script>
+    <script src="app/controllers.js"></script>
 </body>
 </html>

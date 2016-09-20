@@ -2,34 +2,17 @@ var App;
 (function (App) {
     var Services;
     (function (Services) {
-        var LocationService = (function () {
-            function LocationService(_notify, $q) {
-                this.notify = _notify;
-                this.Q = $q;
+        var InventoryService = (function () {
+            function InventoryService(_data) {
+                this.data = _data;
             }
-            LocationService.prototype.GetLocation = function () {
-                var defer = this.Q.defer();
-                if ("geolocation" in navigator) {
-                    navigator.geolocation
-                        .getCurrentPosition(function (p) { return defer.resolve(p.coords); }, function (e) { return defer.reject(e); });
-                }
-                else {
-                    var message = "Location Not Available";
-                    this.notify.error(message);
-                    defer.reject(message);
-                }
-                return defer.promise;
+            InventoryService.prototype.GetProducts = function () {
+                return this.data.get("/api/inventory");
             };
-            LocationService.prototype.GetAddress = function (coords) {
-                var defer = this.Q.defer();
-                //TODO: Fetch Resolved Location
-                defer.resolve("");
-                return defer.promise;
-            };
-            return LocationService;
+            return InventoryService;
         }());
-        Services.LocationService = LocationService;
-        App.module.service("_location", LocationService);
+        Services.InventoryService = InventoryService;
+        App.module.service("_inventory", InventoryService);
     })(Services = App.Services || (App.Services = {}));
 })(App || (App = {}));
 /// <reference path="app.ts" />
@@ -37,6 +20,7 @@ var App;
 (function (App) {
     var Services;
     (function (Services) {
+        var API = "http://localhost:48213";
         var DataService = (function () {
             function DataService($q, $http, _notify) {
                 this.notify = _notify;
@@ -46,17 +30,10 @@ var App;
             DataService.prototype.get = function (url) {
                 var defer = this.Q.defer();
                 var notify = this.notify;
-                var getData = this.http.get(url);
+                var getData = this.http.get(API + url);
                 //On Success
                 getData.success(function (data, status, headers, config) {
-                    if (data.Succeeded) {
-                        defer.resolve(data.Result);
-                    }
-                    else {
-                        var message = data.Message;
-                        //notify.error(message, "Server Error");
-                        defer.reject(message);
-                    }
+                    defer.resolve(data);
                 });
                 //On Error
                 getData.error(function (data, status, header, config) {
@@ -72,14 +49,7 @@ var App;
                 var postData = this.http.post(url, data);
                 //On Success
                 postData.success(function (data, status, headers, config) {
-                    if (data.Succeeded) {
-                        defer.resolve(data.Result);
-                    }
-                    else {
-                        var message = data.Message;
-                        //notify.error(message);
-                        defer.reject(message);
-                    }
+                    defer.resolve(data);
                 });
                 //On Error
                 postData.error(function (data, status, headers, config) {
@@ -95,14 +65,7 @@ var App;
                 var putData = this.http.put(url, data);
                 //On Success
                 putData.success(function (data, status, headers, config) {
-                    if (data.Succeeded) {
-                        defer.resolve(data.Result);
-                    }
-                    else {
-                        var message = data.Message;
-                        notify.error(message);
-                        defer.reject(message);
-                    }
+                    defer.resolve(data);
                 });
                 //On Error
                 putData.error(function (data, status, headers, config) {
@@ -117,14 +80,7 @@ var App;
                 var notify = this.notify;
                 var deleteData = this.http.delete(url);
                 deleteData.success(function (data) {
-                    if (data.Succeeded) {
-                        defer.resolve(data.Result);
-                    }
-                    else {
-                        var message = data.Message;
-                        notify.error(message);
-                        defer.reject(message);
-                    }
+                    defer.resolve(data);
                 });
                 deleteData.error(function (data, status, headers, config) {
                     var message = "Could not send data to Server: " + status;
@@ -180,3 +136,4 @@ var App;
         App.module.service("_notify", NotifyService);
     })(Services = App.Services || (App.Services = {}));
 })(App || (App = {}));
+//# sourceMappingURL=services.js.map

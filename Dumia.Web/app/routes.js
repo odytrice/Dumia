@@ -10,9 +10,10 @@ var App;
                 url: "/",
                 controller: "HomeCtrl",
                 controllerAs: "model",
-                templateUrl: "/templates/index.html"
+                templateUrl: "/templates/home/index.html"
             });
         };
         App.module.config(config);
     })(Routes = App.Routes || (App.Routes = {}));
 })(App || (App = {}));
+//# sourceMappingURL=routes.js.map

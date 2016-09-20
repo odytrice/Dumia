@@ -7,18 +7,15 @@ open Dumia.Domain
 (* Script to Test Data Access *)
 
 let context = SqlRepository.GetContext()
+
 context.DataContext.Log <- Console.Out
 
 let getData = SqlRepository.FetchInventory(context)
-
-let generateQty () =
-    let rand = Random().Next(1,10)
-    Mapper.mapQuantity rand
-
-let pickIdAndQty (p:Product) = [| p.ProductID, generateQty() |]
+let rand = new Random()
 
 let stockInventory = SqlRepository.StockInventory context
 
 SqlRepository.FetchProducts(context)
-|> Seq.map pickIdAndQty
-|> Seq.iter stockInventory
+|> Seq.map (fun p -> p.ProductID, Mapper.mapQuantity (rand.Next(1, 10)))
+|> Seq.toArray
+//|> SqlRepository.StockInventory context

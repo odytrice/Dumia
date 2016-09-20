@@ -1,40 +1,22 @@
 ﻿module App.Services {
-    export class LocationService {
-        notify: NotifyService
-        Q: ng.IQService;
-        constructor(_notify, $q) {
-            this.notify = _notify;
-            this.Q = $q;
+    export class InventoryService {
+        data: DataService;
+        constructor(_data) {
+            this.data = _data;
         }
 
-        GetLocation() {
-            var defer = this.Q.defer<Coordinates>();
-            if ("geolocation" in navigator) {
-                navigator.geolocation
-                    .getCurrentPosition(
-                    p => defer.resolve(p.coords),
-                    e => defer.reject(e));
-            } else {
-                let message = "Location Not Available";
-                this.notify.error(message);
-                defer.reject(message);
-            }
-            return defer.promise;
-        }
-
-        GetAddress(coords: Coordinates) {
-            var defer = this.Q.defer<string>();
-            //TODO: Fetch Resolved Location
-            defer.resolve("");
-            return defer.promise;
+        GetProducts() {
+            return this.data.get<Inventory[]>("/api/inventory");
         }
     }
-    App.module.service("_location", LocationService);
+    App.module.service("_inventory", InventoryService);
 }
 
 
 /// <reference path="app.ts" />
 module App.Services {
+
+    let API = "http://localhost:48213";
 
     export class DataService {
 
@@ -52,18 +34,11 @@ module App.Services {
             var defer = this.Q.defer<T>();
             var notify = this.notify;
 
-            var getData = this.http.get(url);
+            var getData = this.http.get(API + url);
 
             //On Success
-            getData.success(function (data: any, status, headers, config) {
-                if (data.Succeeded) {
-                    defer.resolve(data.Result);
-                }
-                else {
-                    var message = data.Message;
-                    //notify.error(message, "Server Error");
-                    defer.reject(message);
-                }
+            getData.success(function (data: T, status, headers, config) {
+                defer.resolve(data);
             });
 
             //On Error
@@ -84,15 +59,8 @@ module App.Services {
             var postData = this.http.post(url, data);
 
             //On Success
-            postData.success(function (data: Operation<any>, status, headers, config) {
-                if (data.Succeeded) {
-                    defer.resolve(data.Result);
-                }
-                else {
-                    var message = data.Message;
-                    //notify.error(message);
-                    defer.reject(message);
-                }
+            postData.success(function (data: T, status, headers, config) {
+                defer.resolve(data);
             });
 
             //On Error
@@ -112,15 +80,8 @@ module App.Services {
             var putData = this.http.put(url, data);
 
             //On Success
-            putData.success(function (data: Operation<any>, status, headers, config) {
-                if (data.Succeeded) {
-                    defer.resolve(data.Result);
-                }
-                else {
-                    var message = data.Message;
-                    notify.error(message);
-                    defer.reject(message);
-                }
+            putData.success(function (data: T, status, headers, config) {
+                defer.resolve(data);
             });
 
             //On Error
@@ -140,15 +101,8 @@ module App.Services {
 
             var deleteData = this.http.delete(url);
 
-            deleteData.success(function (data: Operation<T>) {
-                if (data.Succeeded) {
-                    defer.resolve(data.Result);
-                }
-                else {
-                    var message = data.Message;
-                    notify.error(message);
-                    defer.reject(message);
-                }
+            deleteData.success(function (data: T) {
+                defer.resolve(data);
             });
 
             deleteData.error(function (data, status, headers, config) {

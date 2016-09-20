@@ -8,7 +8,7 @@ module App.Routes {
                 url: "/",
                 controller: "HomeCtrl",
                 controllerAs: "model",
-                templateUrl: "/templates/index.html"
+                templateUrl: "/templates/home/index.html"
             })
     };
     App.module.config(config);

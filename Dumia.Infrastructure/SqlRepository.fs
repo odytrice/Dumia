@@ -32,7 +32,7 @@ let StockInventory (context : DBContext) =
     // Pre-Compute Products
     let inventory = context.Inventory |> Seq.toArray
 
-    /// Stock a Single Product
+    // Stock a Single Product
     let stockProduct (productID,quantity) = 
         let stock = inventory |> Seq.tryFind (fun p -> p.ProductID = productID)
 
@@ -42,9 +42,8 @@ let StockInventory (context : DBContext) =
         | None -> 
             let inventory = createInventory productID quantity
             context.Inventory.InsertOnSubmit(inventory)
-    
 
-    //Stock Multiple Products
+    // Stock Multiple Products
     let stockProducts (stock : (int * Quantity)[]) =
         stock |> Seq.iter stockProduct 
         context.DataContext.SubmitChanges()

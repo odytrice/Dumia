@@ -11,3 +11,4 @@ var App;
         App.module.config(function ($httpProvider) { return $httpProvider.interceptors.push("loadingInterceptor"); });
     })(Global = App.Global || (App.Global = {}));
 })(App || (App = {}));
+//# sourceMappingURL=app.js.map
