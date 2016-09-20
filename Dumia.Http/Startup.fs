@@ -11,6 +11,7 @@ open System.Web.Http.Owin
 open System.Web.Http.Dispatcher
 open Domain.Http.Infrastructure
 open System.Net.Http.Formatting
+open System.Web.Http.Cors
 
 [<Sealed>]
 type Startup() = 
@@ -23,13 +24,17 @@ type Startup() =
         
         // Remove XML Formatter and Fix Json Camel Case
         config.Formatters.Remove(config.Formatters.XmlFormatter) |> ignore
-        config.Formatters.JsonFormatter.SerializerSettings.ContractResolver <- Serialization.CamelCasePropertyNamesContractResolver()
+        config.Formatters.JsonFormatter.SerializerSettings.ContractResolver <- Serialization.DefaultContractResolver()
+
+        config.EnableCors(EnableCorsAttribute("*","*","*"))
 
         config.Services.Replace(typeof<IHttpControllerActivator>, CompositionRoot())
         app.UseWebApi(config)
 
     
     let registerCors (app : IAppBuilder) = 
+
+        let options = Cors.CorsOptions()
         app.UseCors(Cors.CorsOptions.AllowAll)
     
     let customPages (app : IAppBuilder) = 
@@ -37,6 +42,6 @@ type Startup() =
 
     member this.Configuration(app : IAppBuilder) = 
         registerWebApi (app)
-        |> registerCors
+        //|> registerCors
         |> customPages
         |> ignore

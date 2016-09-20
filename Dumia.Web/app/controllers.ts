@@ -13,7 +13,10 @@ module App.Controllers {
 
             let getProducts =
                 this.inventory.GetProducts()
-                    .then(r => r.map(i => i.Product))
+                    .then(r => {
+                        this.Products = r.map(i => i.Product)
+                        console.log(this.Products)
+                    })
                     .catch(m => this.notify.error("Could not Retrieve Products: " + m));
 
         }

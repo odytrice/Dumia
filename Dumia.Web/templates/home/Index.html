@@ -50,9 +50,7 @@
             <hr />
         </div>
 
-        @if (Model != null && Model.Items.Any())
-        {
-        <div class="row">
+        <div class="row" ng-show="model.Cart">
             <div class="col-xs-12">
                 <table class="table table-striped">
                     <thead>
@@ -64,15 +62,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model.Items)
-                        {
-                        <tr>
+                        <tr ng-repeat="for item in model.Cart.Items">
                             <td>@item.Quantity</td>
                             <td>@item.ProductName</td>
                             <td class="text-right">&#8358;@item.Price</td>
                             <td class="text-right">&#8358;@((item.Price * item.Quantity).ToString("N2"))</td>
                         </tr>
-                        }
+
                         <tr>
                             <td colspan="3" class="text-right">
                                 <b>Total</b>
@@ -85,10 +81,8 @@
                 </table>
             </div>
         </div>
-        }
-        else
-        {
-        <div class="row">
+        
+        <div class="row" ng-hide="model.Cart">
             <div class="col-xs-12">
 
                 <div class="empty" style="margin:50px">
@@ -97,7 +91,6 @@
                 </div>
             </div>
         </div>
-        }
 
         <hr />
         <div class="text-right">

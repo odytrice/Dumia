@@ -9,7 +9,10 @@ var App;
                 this.inventory = _inventory;
                 this.notify = _notify;
                 var getProducts = this.inventory.GetProducts()
-                    .then(function (r) { return r.map(function (i) { return i.Product; }); })
+                    .then(function (r) {
+                    _this.Products = r.map(function (i) { return i.Product; });
+                    console.log(_this.Products);
+                })
                     .catch(function (m) { return _this.notify.error("Could not Retrieve Products: " + m); });
             }
             return HomeCtrl;
