@@ -26,22 +26,19 @@ type Startup() =
         config.Formatters.Remove(config.Formatters.XmlFormatter) |> ignore
         config.Formatters.JsonFormatter.SerializerSettings.ContractResolver <- Serialization.DefaultContractResolver()
 
+        // Enable Cross Origin Resource Sharing
         config.EnableCors(EnableCorsAttribute("*","*","*"))
 
+        // Replace the Default Controller Factory with Composition Root
         config.Services.Replace(typeof<IHttpControllerActivator>, CompositionRoot())
+
+        // Finally Use Web API
         app.UseWebApi(config)
-
-    
-    let registerCors (app : IAppBuilder) = 
-
-        let options = Cors.CorsOptions()
-        app.UseCors(Cors.CorsOptions.AllowAll)
     
     let customPages (app : IAppBuilder) = 
         app.UseWelcomePage("/").UseErrorPage()
 
     member this.Configuration(app : IAppBuilder) = 
         registerWebApi (app)
-        //|> registerCors
         |> customPages
         |> ignore

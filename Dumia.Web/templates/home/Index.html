@@ -18,12 +18,10 @@
                     <i ng-hide="product.ImageUrl" class="fa fa-square fa-4x"></i>
                     <img ng-src="{{product.ImageUrl}}" ng-show="product.ImageUrl" class="img-responsive" height="100" />
                     <div class="text-center">
-                        <p style="margin-top:10px;font-size:23px">@product.Name</p>
-                        <p style="font-weight:bold">&#8358;@product.Price.ToString("N2")</p>
+                        <p style="margin-top:10px;font-size:23px">{{product.Name}}</p>
+                        <p style="font-weight:bold">${{product.Price | number : 2}}</p>
+                        <button ng-click="model.addToCart(product)" class="btn btn-primary"><i class="fa fa-cart-plus"></i>Add to Cart</button>
 
-                        <form action="@Url.Action(" add","cart",new { id=product.ProductID })" method="post">
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-cart-plus"></i>Add to Cart</button>
-                        </form>
                     </div>
 
                 </div>
@@ -50,7 +48,7 @@
             <hr />
         </div>
 
-        <div class="row" ng-show="model.Cart">
+        <div class="row" ng-show="model.displayCart()">
             <div class="col-xs-12">
                 <table class="table table-striped">
                     <thead>
@@ -62,11 +60,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="for item in model.Cart.Items">
-                            <td>@item.Quantity</td>
-                            <td>@item.ProductName</td>
-                            <td class="text-right">&#8358;@item.Price</td>
-                            <td class="text-right">&#8358;@((item.Price * item.Quantity).ToString("N2"))</td>
+
+                        <tr ng-repeat="item in model.Cart.Items">
+                            <td>{{item.Quantity}}</td>
+                            <td>{{item.Product.Name}}</td>
+                            <td class="text-right">${{item.Product.Price | number: 2}}</td>
+                            <td class="text-right">${{item.Product.Price * item.Quantity | number : 2}}</td>
                         </tr>
 
                         <tr>
@@ -74,15 +73,15 @@
                                 <b>Total</b>
                             </td>
                             <td class="text-right">
-                                <b>&#8358;@Model.Total.ToString("N2")</b>
+                                <b>$ {{model.displayTotal(model.Cart) | number: 2}}</b>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        
-        <div class="row" ng-hide="model.Cart">
+
+        <div class="row" ng-hide="model.displayCart()">
             <div class="col-xs-12">
 
                 <div class="empty" style="margin:50px">
@@ -94,7 +93,9 @@
 
         <hr />
         <div class="text-right">
-            <a href="@Url.Action(" checkout","cart")" class="btn btn-success"><i class="fa fa-shopping-bag"></i>Checkout</a>
+            <button ng-click="model.checkout()" class="btn btn-success">
+                <i class="fa fa-shopping-bag"></i>Checkout
+            </button>
         </div>
     </div>
 </div>
