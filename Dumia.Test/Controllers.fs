@@ -6,5 +6,11 @@ open NUnit.Framework
 module Controllers =
     
     [<Test>]
-    let ``asdasd`` = 
+    let ``Test that Inventory Items Return Data`` = 
+        //Arrange
+
+        //Act
+
+        //Assert
+
         ()

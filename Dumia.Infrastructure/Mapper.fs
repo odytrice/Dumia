@@ -25,7 +25,7 @@ let createProduct (product: Product) =
 
 
 let createInventory productID (quantity:Quantity) =
-    let entity = DumiaDB.ServiceTypes.Inventory();
+    let entity = DumiaDB.ServiceTypes.Inventory()
     entity.ProductID <- productID
     entity.Quantity <- int quantity
     entity
