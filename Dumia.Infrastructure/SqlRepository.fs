@@ -3,9 +3,21 @@
 open Dumia.Domain
 open SqlProvider
 open Mapper
+open System.Configuration
+open FSharp.Configuration
+
+type Settings = AppSettings<"App.Config">
 
 //Create the Context
-let GetContext() = DumiaDB.GetDataContext()
+let GetContext() = 
+
+    //Create an Instance of the TypeProvider Context
+    let context = DumiaDB.GetDataContext()
+
+    //Set Runtime Connection String
+    context.Connection.ConnectionString <- Settings.ConnectionStrings.Dumia
+
+    context
 
 /// Fetches all the Products that are in Stock and their Quantities
 let FetchInventory (context : DBContext) = 

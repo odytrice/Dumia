@@ -65,6 +65,10 @@
     <Reference Include="FluentMigrator.Runner">
       <HintPath>..\packages\FluentMigrator.Tools.1.6.2\tools\AnyCPU\40\FluentMigrator.Runner.dll</HintPath>
     </Reference>
+    <Reference Include="FSharp.Configuration">
+      <HintPath>..\packages\FSharp.Configuration.0.6.2\lib\net40\FSharp.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FSharp.Core">
       <HintPath>..\packages\FSharp.Core.4.0.0.1\lib\net40\FSharp.Core.dll</HintPath>
       <Private>True</Private>
@@ -78,6 +82,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
+    <Reference Include="SharpYaml">
+      <HintPath>..\packages\FSharp.Configuration.0.6.2\lib\net40\SharpYaml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
