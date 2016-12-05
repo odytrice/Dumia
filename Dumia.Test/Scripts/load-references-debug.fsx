@@ -1,8 +1,5 @@
 // Warning: generated file; your changes could be lost when a new file is generated.
 #I __SOURCE_DIRECTORY__
-#r "../../packages/FsUnit.2.3.1/lib/net45/FsUnit.NUnit.dll"
-#r "../../packages/FsUnit.2.3.1/lib/net45/NHamcrest.dll"
-#r "../../packages/NUnit.3.4.1/lib/net45/nunit.framework.dll"
 #r "System.Core.dll"
 #r "System.dll"
 #r "System.Numerics.dll"
@@ -11,3 +8,12 @@
 #r "../../Dumia.Domain/bin/Debug/Dumia.Domain.dll"
 #r "../../Dumia.Http/bin/Dumia.Http.dll"
 #r "../../Dumia.Infrastructure/bin/Debug/Dumia.Infrastructure.dll"
+#r "System.Net.Http.dll"
+#r "../../packages/Microsoft.AspNet.WebApi.Client.5.2.3/lib/net45/System.Net.Http.Formatting.dll"
+#r "../../packages/Microsoft.AspNet.WebApi.Core.5.2.3/lib/net45/System.Web.Http.dll"
+#r "../../packages/Microsoft.AspNet.WebApi.WebHost.5.2.3/lib/net45/System.Web.Http.WebHost.dll"
+#r "../../packages/FsUnit.2.3.2/lib/net45/FsUnit.NUnit.dll"
+#r "../../packages/FsUnit.2.3.2/lib/net45/NHamcrest.dll"
+#r "../../packages/NUnit.3.5.0/lib/net45/nunit.framework.dll"
+#r "../../packages/Microsoft.AspNet.Cors.5.2.3/lib/net45/System.Web.Cors.dll"
+#r "../../packages/Microsoft.AspNet.WebApi.Cors.5.2.3/lib/net45/System.Web.Http.Cors.dll"
