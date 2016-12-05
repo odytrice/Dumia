@@ -13,6 +13,8 @@ open Domain.Http.Infrastructure
 open System.Net.Http.Formatting
 open System.Web.Http.Cors
 
+type Settings = FSharp.Configuration.AppSettings<"web.config">
+
 [<Sealed>]
 type Startup() = 
 
@@ -38,7 +40,12 @@ type Startup() =
     let customPages (app : IAppBuilder) = 
         app.UseWelcomePage("/").UseErrorPage()
 
+    let migrateDatabase (app:IAppBuilder)=
+        FluentRunner.MigrateToLatest(Settings.ConnectionStrings.Dumia)
+        app
+
     member this.Configuration(app : IAppBuilder) = 
         registerWebApi (app)
+        |> migrateDatabase
         |> customPages
         |> ignore

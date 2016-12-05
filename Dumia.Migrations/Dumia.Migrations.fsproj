@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Migration01.fs" />
     <Content Include="packages.config" />
+    <Compile Include="FluentRunner.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FluentMigrator">

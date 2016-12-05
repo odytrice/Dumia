@@ -122,6 +122,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="FSharp.Configuration">
+      <HintPath>..\packages\FSharp.Configuration.0.6.4\lib\net40\FSharp.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FSharp.Core">
       <HintPath>..\packages\FSharp.Core.4.0.0.1\lib\net40\FSharp.Core.dll</HintPath>
       <Private>True</Private>
@@ -148,6 +152,10 @@
     </Reference>
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpYaml">
+      <HintPath>..\packages\FSharp.Configuration.0.6.4\lib\net40\SharpYaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -189,6 +197,11 @@
     <ProjectReference Include="..\Dumia.Infrastructure\Dumia.Infrastructure.fsproj">
       <Name>Dumia.Infrastructure</Name>
       <Project>{e803fe17-3585-42c0-b3be-8d4f650b189f}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Dumia.Migrations\Dumia.Migrations.fsproj">
+      <Name>Dumia.Migrations</Name>
+      <Project>{4a5cdcd7-c4b6-4025-b184-d1338c9571c8}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
