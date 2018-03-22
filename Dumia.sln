@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Dumia.Http", "Dumia.Http\Dumia.Http.fsproj", "{FFE56477-0D53-45F3-904E-E4797346FE96}"
 EndProject
@@ -14,6 +14,11 @@ EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Dumia.Test", "Dumia.Test\Dumia.Test.fsproj", "{11BF7638-18FB-49F0-8487-89150567B806}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Dumia.Migrations", "Dumia.Migrations\Dumia.Migrations.fsproj", "{4A5CDCD7-C4B6-4025-B184-D1338C9571C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E03D27B5-2AFD-4D2A-9AE0-45B7380DEAFD}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,5 +53,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93B15AA0-51A1-466D-B2F5-3A52F3681E4B}
 	EndGlobalSection
 EndGlobal

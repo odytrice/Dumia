@@ -1,0 +1,15 @@
+FSharp.Configuration
+FSharp.Core
+FsWebAddRegistryEntries
+Microsoft.AspNet.Cors
+Microsoft.AspNet.WebApi.Client
+Microsoft.AspNet.WebApi.Core
+Microsoft.AspNet.WebApi.Cors
+Microsoft.AspNet.WebApi.Owin
+Microsoft.Owin
+Microsoft.Owin.Cors
+Microsoft.Owin.Diagnostics
+Microsoft.Owin.Host.SystemWeb
+MSBuild.Extension.Pack
+Newtonsoft.Json
+Owin
