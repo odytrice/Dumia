@@ -3,7 +3,7 @@ source https://api.nuget.org/v3/index.json
 nuget FluentMigrator 1.6.2 restriction: >= net45
 nuget FluentMigrator.Tools 1.6.2 restriction: >= net45
 nuget FSharp.Configuration 0.6.4
-nuget FSharp.Core 4.0.0.1
+nuget FSharp.Core 4.0.0.1 redirects: force
 nuget FSharp.Data 2.3.2 restriction: >= net46
 nuget FSharp.Data.TypeProviders 5.0.0.2 restriction: >= net46
 nuget FsUnit 2.3.2 restriction: >= net46

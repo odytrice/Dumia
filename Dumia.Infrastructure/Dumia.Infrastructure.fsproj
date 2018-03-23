@@ -60,6 +60,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Database.sql" />
+    <None Include="Database.dbml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FluentMigrator.Runner">
