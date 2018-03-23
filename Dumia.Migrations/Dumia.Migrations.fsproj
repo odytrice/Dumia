@@ -52,6 +52,9 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="Migration01.fs" />
+    <Content Include="InstallationDummyFile.txt">
+      <Paket>True</Paket>
+    </Content>
     <Content Include="paket.references" />
     <Compile Include="FluentRunner.fs" />
   </ItemGroup>
