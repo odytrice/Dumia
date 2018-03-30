@@ -14,3 +14,6 @@ To run the web project, you need to first install
     - Run `npm install bower`
 
 and then go to the Dumia.Web folder and run `bower install`
+
+# Database Migrations
+You will need to build Dumia.Migrations first

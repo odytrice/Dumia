@@ -3,7 +3,6 @@
 open Dumia.Domain
 open SqlProvider
 open Mapper
-open System.Configuration
 open FSharp.Configuration
 
 type Settings = AppSettings<"App.Config">
